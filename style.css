@@ -27,7 +27,7 @@ body {
 	font-size: 1.5rem;
 	margin: 1rem;
 	padding: 0.4rem 0rem;
-	tansition: all .07s ease;
+	transition: all .07s ease;
     text-align: center;
     text-shadow: -1px 0px .5rem #000;
 	width: 7rem;
