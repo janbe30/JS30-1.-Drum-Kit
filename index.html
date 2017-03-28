@@ -64,9 +64,23 @@
   	window.addEventListener('keydown', function(e){
 		//const is a data structure that contains info that will never change
 		const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); //select audio corresponding to pressed key
+		const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); //select corresponding key
 		if(!audio) return; //stop function from running all together
+		audio.currentTime=0; //rewind to the start so if same key is hit many times it can play audio
 		audio.play();
+		key.classList.add('playing'); //add playing to selected key
 	});
+	
+	
+	//transition end event
+	function removeTransition(e){
+		if(e.propertyName !== 'transform') return; //skip it if it's not transform
+		this.classList.remove('playing');
+	}
+	
+	const keys = document.querySelector('.key');
+	//keys.addEventListener('transitionend'); //We would be able to do this if it was one single key. This wouldn't work since it's an array of keys
+	keys.forEach(key =>  key.addEventListener('transitionend', removeTransition)); //Each key gets eventListener added to it and when transition end, we remove it
   </script>
   </body>  
 
