@@ -78,7 +78,7 @@
 		this.classList.remove('playing');
 	}
 	
-	const keys = document.querySelector('.key');
+	const keys = document.querySelectorAll('.key');
 	//keys.addEventListener('transitionend'); //We would be able to do this if it was one single key. This wouldn't work since it's an array of keys
 	keys.forEach(key =>  key.addEventListener('transitionend', removeTransition)); //Each key gets eventListener added to it and when transition end, we remove it
   </script>
