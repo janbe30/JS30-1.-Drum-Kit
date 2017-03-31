@@ -62,7 +62,7 @@
   
   <script>
 
-	function playSound(){
+	function playSound(e){
 		//const is a data structure that contains info that will never change
 		const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); //select audio corresponding to pressed key
 		const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); //select corresponding key
